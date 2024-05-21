@@ -6,15 +6,10 @@ const letrasMinusculas = 'abcdefghijklmnopqrstuvxywz';
 const numeros = '0123456789';
 const simbolos = '!@%*?';
 
-
-Agora, assumir os parâmetros para as flags (checkbox) e padrões de estilização:
-
 const botoes = document.querySelectorAll('.parametro-senha__botao');
 const campoSenha = document.querySelector('#campo-senha');
 const checkbox = document.querySelectorAll('.checkbox');
 const forcaSenha = document.querySelector('.forca');
-
-Agora vamos organizar o tamanho dos botões para as senhas
 
 botoes[0].onclick = diminuiTamanho;
 botoes[1].onclick = aumentaTamanho;
@@ -68,8 +63,6 @@ function geraSenha() {
 
 }
 
-Por último, criamos funções que classificarão as senhas como forte, média e fraca conforme a quantidade de letras números e símbolos usados
-
 function classificaSenha(tamanhoAlfabeto){
     let entropia = tamanhoSenha * Math.log2(tamanhoAlfabeto);
     console.log(entropia);
@@ -83,4 +76,4 @@ function classificaSenha(tamanhoAlfabeto){
     }
     const valorEntropia = document.querySelector('.entropia');
     valorEntropia.textContent = "Um computador pode levar até " + Math.floor(2**entropia/(100e6*60*60*24)) + " dias para descobrir essa senha.";
-               }
+}
